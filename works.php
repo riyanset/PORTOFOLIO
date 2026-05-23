@@ -1,8 +1,13 @@
-<?php include 'includes/header.php'; ?>
+<?php
+$pageTitle = 'Karya';
+$metaDescription = 'Portofolio karya Riyan Setiawan: aplikasi web, lukisan, dan fotografi.';
+include 'includes/header.php';
+?>
 
 <div class="container">
-    <section class="section works">
+    <section class="page-panel works">
         <h2 class="section__title">Karya Saya</h2>
+        <p class="section__lead">Proyek digital, karya seni lukis, dan dokumentasi fotografi.</p>
         
         <!-- Folder Buttons -->
         <div class="works-buttons" id="worksButtons">
@@ -232,24 +237,5 @@
         </div>
     </section>
 </div>
-
-<script>
-function showGallery(karyaId) {
-    document.getElementById('worksButtons').style.display = 'none';
-    document.querySelectorAll('.works-gallery').forEach(function(gallery) {
-        gallery.style.display = 'none';
-    });
-    document.getElementById(karyaId).style.display = 'block';
-    document.getElementById(karyaId).classList.add('fade-in');
-}
-
-function showFolders() {
-    document.getElementById('worksButtons').style.display = 'grid';
-    document.querySelectorAll('.works-gallery').forEach(function(gallery) {
-        gallery.style.display = 'none';
-        gallery.classList.remove('fade-in');
-    });
-}
-</script>
 
 <?php include 'includes/footer.php'; ?>
