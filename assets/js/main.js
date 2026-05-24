@@ -50,6 +50,7 @@
         if (target) {
             target.style.display = 'block';
             target.classList.add('fade-in');
+            loadDeferredGalleryImages(target);
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };
@@ -67,6 +68,26 @@
 
     initLightbox();
 })();
+
+function loadDeferredGalleryImages(container) {
+    if (!container) return;
+
+    container.querySelectorAll('img[data-src]').forEach(function (img) {
+        if (img.getAttribute('src')) return;
+        img.setAttribute('src', img.getAttribute('data-src'));
+    });
+}
+
+function getFullImageSrc(item) {
+    if (isPdfItemElement(item)) {
+        return '';
+    }
+    return item.getAttribute('data-full-src') || item.currentSrc || item.src || '';
+}
+
+function isPdfItemElement(el) {
+    return el.classList.contains('certificate-card__image-wrapper--pdf');
+}
 
 function initLightbox() {
     var lightbox = document.getElementById('lightbox');
@@ -89,7 +110,7 @@ function initLightbox() {
     }
 
     function isPdfItem(el) {
-        return el.classList.contains('certificate-card__image-wrapper--pdf');
+        return isPdfItemElement(el);
     }
 
     function getItemLabel(el) {
@@ -133,8 +154,21 @@ function initLightbox() {
                 });
             }
         } else {
-            lightboxImg.classList.remove('lightbox__img--loading');
-            lightboxImg.src = item.currentSrc || item.src;
+            var fullSrc = getFullImageSrc(item);
+            lightboxImg.classList.add('lightbox__img--loading');
+            lightboxImg.removeAttribute('src');
+
+            var preview = new Image();
+            preview.onload = function () {
+                if (currentItems[currentIndex] !== item) return;
+                lightboxImg.classList.remove('lightbox__img--loading');
+                lightboxImg.src = fullSrc;
+            };
+            preview.onerror = function () {
+                if (currentItems[currentIndex] !== item) return;
+                lightboxImg.classList.remove('lightbox__img--loading');
+            };
+            preview.src = fullSrc;
         }
 
         var hasMany = currentItems.length > 1;

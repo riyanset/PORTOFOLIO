@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Tentang';
 $metaDescription = 'Profil Riyan Setiawan — mahasiswa Teknik Informatika, web developer, dan seniman.';
+require_once 'includes/image.php';
 include 'includes/header.php';
 ?>
 
@@ -14,7 +15,7 @@ include 'includes/header.php';
                 <p>Saya adalah seorang mahasiswa di jurusan Teknik Informatika yang memiliki ketertarikan besar dalam dunia pengembangan web. Saya senang mengeksplorasi teknologi baru dan terus berusaha untuk mengasah keterampilan dalam menciptakan solusi web yang inovatif dan fungsional. Selain itu, saya juga seorang seniman yang menyukai proses kreatif dalam melukis. Saya percaya bahwa teknologi dan seni dapat saling melengkapi, dan melalui keduanya, saya berusaha untuk menciptakan karya yang tidak hanya bermanfaat, tetapi juga penuh makna.</p>
             </div>
             <div class="about__image-wrapper">
-                <img src="assets/images/2.jpeg" alt="Foto Riyan Setiawan" class="about__image" width="260" height="320" loading="lazy">
+                <?php echo profile_img('assets/images/2.jpeg', 'Foto Riyan Setiawan', 'about__image', 260, 320); ?>
             </div>
         </div>
     </section>

@@ -1,13 +1,14 @@
 <?php
 $pageTitle = 'Beranda';
 $metaDescription = 'Portofolio Riyan Setiawan — Mahasiswa Teknik Informatika, fotografer, dan seniman.';
+require_once 'includes/image.php';
 include 'includes/header.php';
 ?>
 
 <div class="container">
     <section class="page-panel hero">
         <div class="hero__image-wrap">
-            <img src="assets/images/1.jpeg" alt="Foto profil Riyan Setiawan" class="hero__image" width="200" height="200" loading="eager">
+            <?php echo profile_img('assets/images/1.jpeg', 'Foto profil Riyan Setiawan', 'hero__image', 200, 200, 'eager'); ?>
         </div>
         <h1 class="hero__title">Riyan Setiawan</h1>
         <p class="hero__subtitle">Mahasiswa Teknik Informatika · Fotografer & Seniman</p>

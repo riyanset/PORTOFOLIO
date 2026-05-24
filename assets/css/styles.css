@@ -901,6 +901,11 @@ body.nav-open .nav-toggle .nav-toggle__bar:nth-child(3) {
     max-height: 320px;
     object-fit: cover;
     transition: transform var(--transition-slow);
+    background-color: var(--color-border-light);
+}
+
+.gallery-img[data-src]:not([src]) {
+    background: linear-gradient(135deg, var(--color-border-light) 0%, var(--color-border) 100%);
 }
 
 @media (hover: hover) {
