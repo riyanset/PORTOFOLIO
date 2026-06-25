@@ -42,6 +42,10 @@ $fotografi = [
     ['assets/images/jepretan/IMG_4323.jpg', 'Dokumentasi Foto 12'],
     ['assets/images/jepretan/IMG_4332.jpg', 'Dokumentasi Foto 13'],
 ];
+
+$perpusShots = [
+    ['assets/images/perpus/perpus.png', 'Tampilan Aplikasi E-Perpus'],
+];
 ?>
 
 <div class="container">
@@ -58,6 +62,9 @@ $fotografi = [
             </div>
             <div class="works-item">
                 <button class="btn" onclick="showGallery('karya3')">FOTOGRAFI</button>
+            </div>
+            <div class="works-item">
+                <button class="btn" onclick="showGallery('karya4')">App E-Perpus</button>
             </div>
         </div>
 
@@ -96,6 +103,24 @@ $fotografi = [
                 <?php foreach ($fotografi as [$path, $caption]): ?>
                 <div class="gallery-card">
                     <?php echo gallery_img($path, $caption); ?>
+                    <p class="gallery-text"><?php echo htmlspecialchars($caption, ENT_QUOTES, 'UTF-8'); ?></p>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div id="karya4" class="works-gallery works-gallery--fullwidth" style="display: none;">
+            <div class="container">
+                <button class="back-button" onclick="showFolders()">← Kembali</button>
+                <h3 class="gallery-heading">App E-Perpus</h3>
+            </div>
+            <div class="gallery-grid gallery-grid--full">
+                <?php foreach ($perpusShots as [$path, $caption]): ?>
+                <div class="gallery-card">
+                    <div style="text-align:center; padding: 1.5rem 0; background: #f0f4ff;">
+                        <a href="https://e-perpus-dkxz.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:#000000; color:#ffffff; font-size:2.5rem; font-weight:900; padding:1.2rem 3rem; border-radius:16px; text-decoration:none; letter-spacing:1px; box-shadow:0 8px 25px rgba(0,0,0,0.4);">🔗 Kunjungi E-Perpus</a>
+                    </div>
+                    <?php echo gallery_img($path, $caption, 'gallery-img gallery-img--full', 640); ?>
                     <p class="gallery-text"><?php echo htmlspecialchars($caption, ENT_QUOTES, 'UTF-8'); ?></p>
                 </div>
                 <?php endforeach; ?>
