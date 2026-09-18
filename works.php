@@ -31,16 +31,13 @@ $fotografi = [
     ['assets/images/jepretan/_MG_3025 (1).jpg', 'Dokumentasi Foto 1'],
     ['assets/images/jepretan/_MG_3034 (1).jpg', 'Dokumentasi Foto 2'],
     ['assets/images/jepretan/_MG_3045.jpg', 'Dokumentasi Foto 3'],
-    ['assets/images/jepretan/_MG_5540.jpg', 'Dokumentasi Foto 4'],
-    ['assets/images/jepretan/_MG_5541.jpg', 'Dokumentasi Foto 5'],
-    ['assets/images/jepretan/20161007151030__MG_5719.jpg', 'Dokumentasi Foto 6'],
-    ['assets/images/jepretan/20161007151202__MG_5721 (2).jpg', 'Dokumentasi Foto 7'],
-    ['assets/images/jepretan/IMG_4033.jpg', 'Dokumentasi Foto 8'],
-    ['assets/images/jepretan/IMG_4034.jpg', 'Dokumentasi Foto 9'],
-    ['assets/images/jepretan/IMG_4038 (1).jpg', 'Dokumentasi Foto 10'],
-    ['assets/images/jepretan/IMG_4318.jpg', 'Dokumentasi Foto 11'],
-    ['assets/images/jepretan/IMG_4323.jpg', 'Dokumentasi Foto 12'],
-    ['assets/images/jepretan/IMG_4332.jpg', 'Dokumentasi Foto 13'],
+    ['assets/images/jepretan/_MG_5541.jpg', 'Dokumentasi Foto 4'],
+    ['assets/images/jepretan/IMG_4318.jpg', 'Dokumentasi Foto 5'],
+    ['assets/images/jepretan/IMG_4323.jpg', 'Dokumentasi Foto 6'],
+    ['assets/images/jepretan/IMG_4332.jpg', 'Dokumentasi Foto 7'],
+    ['assets/images/jepretan/WhatsApp Image 2026-09-18 at 19.43.22.jpeg', 'Dokumentasi Foto 8'],
+    ['assets/images/jepretan/WhatsApp Image 2026-09-18 at 19.43.26.jpeg', 'Dokumentasi Foto 9'],
+    ['assets/images/jepretan/WhatsApp Image 2026-09-18 at 19.43.30.jpeg', 'Dokumentasi Foto 10'],
 ];
 
 $perpusShots = [
@@ -126,7 +123,7 @@ $bookingShots = [
             <div class="gallery-grid">
                 <?php foreach ($fotografi as [$path, $caption]): ?>
                 <div class="gallery-card">
-                    <?php echo gallery_img($path, $caption); ?>
+                    <?php echo gallery_img($path, $caption, 'gallery-img', 360); ?>
                 </div>
                 <?php endforeach; ?>
             </div>
