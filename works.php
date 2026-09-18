@@ -46,6 +46,26 @@ $fotografi = [
 $perpusShots = [
     ['assets/images/perpus/perpus.png', 'Tampilan Aplikasi E-Perpus'],
 ];
+
+$sijagaShots = [
+    ['assets/images/sijaga/tampilan login.png', 'Tampilan Login SIJAGA'],
+    ['assets/images/sijaga/pendaftaran oleh user atau masyarakat.png', 'Pendaftaran Masyarakat'],
+    ['assets/images/sijaga/tampilan dashboard admin.png', 'Dashboard Admin'],
+    ['assets/images/sijaga/tampilan titik peta .png', 'Tampilan Peta GPS'],
+    ['assets/images/sijaga/form pelaporan oleh masyarakat.png', 'Form Pelaporan Masyarakat'],
+    ['assets/images/sijaga/tampilan pelaporan oleh admin.png', 'Tampilan Pelaporan Admin'],
+    ['assets/images/sijaga/tampilan verifikasi.png', 'Tampilan Verifikasi Laporan'],
+];
+
+$bookingShots = [
+    ['assets/images/sistem booking/Tampilan beranda user.png', 'Beranda User'],
+    ['assets/images/sistem booking/form booking.png', 'Form Booking'],
+    ['assets/images/sistem booking/tampilan dashboard admin.png', 'Dashboard Admin'],
+    ['assets/images/sistem booking/tampilan dashboard booking admin.png', 'Dashboard Booking Admin'],
+    ['assets/images/sistem booking/tampilan keuangan admin.png', 'Keuangan Admin'],
+    ['assets/images/sistem booking/tampilan ulasan admin.png', 'Ulasan Admin'],
+    ['assets/images/sistem booking/form yang terhubung dengan nama akun instagram vendor lain.png', 'Form Terhubung Instagram Vendor'],
+];
 ?>
 
 <div class="container">
@@ -66,6 +86,12 @@ $perpusShots = [
             <div class="works-item">
                 <button class="btn" onclick="showGallery('karya4')">App E-Perpus</button>
             </div>
+            <div class="works-item">
+                <button class="btn" onclick="showGallery('karya5')">SIJAGA Gintung</button>
+            </div>
+            <div class="works-item">
+                <button class="btn" onclick="showGallery('karya6')">Sistem Booking Dekorasi</button>
+            </div>
         </div>
 
         <div id="karya1" class="works-gallery works-gallery--fullwidth" style="display: none;">
@@ -77,7 +103,6 @@ $perpusShots = [
                 <?php foreach ($maintenanceShots as [$path, $caption]): ?>
                 <div class="gallery-card">
                     <?php echo gallery_img($path, $caption, 'gallery-img gallery-img--full', 640); ?>
-                    <p class="gallery-text"><?php echo htmlspecialchars($caption, ENT_QUOTES, 'UTF-8'); ?></p>
                 </div>
                 <?php endforeach; ?>
             </div>
@@ -90,7 +115,6 @@ $perpusShots = [
                 <?php foreach ($lukisan as [$path, $caption]): ?>
                 <div class="gallery-card">
                     <?php echo gallery_img($path, $caption); ?>
-                    <p class="gallery-text"><?php echo htmlspecialchars($caption, ENT_QUOTES, 'UTF-8'); ?></p>
                 </div>
                 <?php endforeach; ?>
             </div>
@@ -103,7 +127,6 @@ $perpusShots = [
                 <?php foreach ($fotografi as [$path, $caption]): ?>
                 <div class="gallery-card">
                     <?php echo gallery_img($path, $caption); ?>
-                    <p class="gallery-text"><?php echo htmlspecialchars($caption, ENT_QUOTES, 'UTF-8'); ?></p>
                 </div>
                 <?php endforeach; ?>
             </div>
@@ -121,7 +144,40 @@ $perpusShots = [
                         <a href="https://e-perpus-dkxz.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:#000000; color:#ffffff; font-size:2.5rem; font-weight:900; padding:1.2rem 3rem; border-radius:16px; text-decoration:none; letter-spacing:1px; box-shadow:0 8px 25px rgba(0,0,0,0.4);">🔗 Kunjungi E-Perpus</a>
                     </div>
                     <?php echo gallery_img($path, $caption, 'gallery-img gallery-img--full', 640); ?>
-                    <p class="gallery-text"><?php echo htmlspecialchars($caption, ENT_QUOTES, 'UTF-8'); ?></p>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div id="karya5" class="works-gallery works-gallery--fullwidth" style="display: none;">
+            <div class="container">
+                <button class="back-button" onclick="showFolders()">← Kembali</button>
+                <h3 class="gallery-heading">SIJAGA Gintung - Sistem Informasi Jalan Gintung</h3>
+            </div>
+            <div style="text-align:center; padding: 1rem 0 1.5rem;">
+                <a href="https://riyansetiawan.fwh.is/login.php" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:#16a34a; color:#ffffff; font-size:1.5rem; font-weight:800; padding:0.9rem 2.5rem; border-radius:14px; text-decoration:none; letter-spacing:1px; box-shadow:0 6px 20px rgba(22,163,74,0.4);">🔗 Kunjungi SIJAGA</a>
+            </div>
+            <div class="gallery-grid gallery-grid--full">
+                <?php foreach ($sijagaShots as [$path, $caption]): ?>
+                <div class="gallery-card">
+                    <?php echo gallery_img($path, $caption, 'gallery-img gallery-img--full', 640); ?>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div id="karya6" class="works-gallery works-gallery--fullwidth" style="display: none;">
+            <div class="container">
+                <button class="back-button" onclick="showFolders()">← Kembali</button>
+                <h3 class="gallery-heading">Sistem Booking Flowliz Decoration</h3>
+            </div>
+            <div style="text-align:center; padding: 1rem 0 1.5rem;">
+                <a href="https://flowlizsdecoration.fwh.is" target="_blank" rel="noopener noreferrer" style="display:inline-block; background:#7c3aed; color:#ffffff; font-size:1.5rem; font-weight:800; padding:0.9rem 2.5rem; border-radius:14px; text-decoration:none; letter-spacing:1px; box-shadow:0 6px 20px rgba(124,58,237,0.4);">🔗 Kunjungi Sistem Booking</a>
+            </div>
+            <div class="gallery-grid gallery-grid--full">
+                <?php foreach ($bookingShots as [$path, $caption]): ?>
+                <div class="gallery-card">
+                    <?php echo gallery_img($path, $caption, 'gallery-img gallery-img--full', 640); ?>
                 </div>
                 <?php endforeach; ?>
             </div>
