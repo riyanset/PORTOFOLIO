@@ -12,7 +12,7 @@ include 'includes/header.php';
             <div class="contact-info__item">
                 <h3 class="contact-info__title">WhatsApp</h3>
                 <p class="contact-info__text">Respon tercepat via pesan langsung</p>
-                <a href="https://wa.me/6289647796129" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp">Chat via WhatsApp</a>
+                <a href="https://wa.me/6289675601586" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp">Chat via WhatsApp</a>
             </div>
         </div>
     </section>
